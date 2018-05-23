@@ -1,16 +1,18 @@
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>SG Lucky Sevens</title>
 </head>
+
 <body>
     <h1>Lucky Sevens</h1>
 
-    <form action="">
+    <form name="luckySevens">
         <label for="startingBet">Starting Bet:</label>
-        <input type="number" name"startingBet" id="startingBet" placeholder="$0.00">
+        <input type="number" name "startingBet" id="startingBet" placeholder="$0.00">
 
         <button type="submit">Play</button>
     </form>
@@ -22,21 +24,24 @@
     <table>
         <tr>
             <td>Starting Bet</td>
-            <td></td>
+            <td>
+                <span id="resultsStartingBet"></span></td>
         </tr>
         <tr>
             <td>Total Rolls Before Going Broke</td>
-            <td></td>
+            <td><span id="totalRollsTilBroke"></span></td>
         </tr>
         <tr>
             <td>Highest Amount Won</td>
-            <td></td>
+            <td><span id="highestAmountWon"></span></td>
         </tr>
         <tr>
             <td>Roll Count at Highest Amount Won</td>
-            <td></td>
+            <td><span id="rollCountAtHighestWon"></span></td>
         </tr>
-
     </table>
+
+
+    <script type=" text/JavaScript " src="luckySevens.js "></script>
 </body>
 </html>
