@@ -66,6 +66,8 @@ function playGame() {
         console.log("Highest amount won is currently: " + highestAmountWon);
         console.log("-----------------")
 
+        document.forms["luckySevens"]["startingBet"].value = gameMoney;
+
         if (gameMoney === 0) {
             showResults();
             console.log("Sorry you're out of money.");
@@ -76,7 +78,11 @@ function playGame() {
             document.getElementById("totalRollsTilBroke").innerText = rollCounter;
             document.getElementById("highestAmountWon").innerText = highestAmountWon;
             document.getElementById("rollCountAtHighestWon").innerText = rollCountAtHighestWon;
+            document.getElementById("playButton").style.display = "none";
+            document.getElementById("resetButton").style.display = "block";
             document.getElementById("results").style.display = "block";
+
+
 
             return false;
         }
@@ -97,4 +103,17 @@ function rollDice() {
     var diceTotal = die1 + die2;
     console.log("Current roll: " + die1 + die2 + diceTotal);
     return diceTotal;
+}
+
+function resetForm() {
+    document.getElementById("playButton").style.display = "block";
+    document.getElementById("resetButton").style.display = "none";
+    document.getElementById("results").style.display = "none";
+
+    rollCounter = 0;
+    highestAmountWon = 0;
+    rollCountAtHighestWon = 0;
+    gameMoney = 0;
+
+    playGame(); 
 }
