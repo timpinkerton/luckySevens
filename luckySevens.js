@@ -6,24 +6,11 @@ document.forms["luckySevens"]["startingBet"].value = 0;
 
 // rollCounter initialized at 0
 var rollCounter = 0;
-
 var highestAmountWon = 0;
 var rollCountAtHighestWon = 0;
 
 // initializing gameMoney equal to 0
 var gameMoney = 0;
-
-// function validateForm() {
-//     var testStartingBet = document.forms["luckySevens"]["startingBet"].value;
-//     if (testStartingBet < 1) {
-//         alert("Please enter a minimum bet of 1.");
-//         return false;
-//     } else {
-//         playGame();
-//         return false;
-//     }
-// }
-
 
 // playGame function is called when the submit(playButton) is clicked
 function playGame() {
@@ -82,8 +69,6 @@ function playGame() {
             document.getElementById("resetButton").style.display = "block";
             document.getElementById("results").style.display = "block";
 
-
-
             return false;
         }
     }
@@ -105,6 +90,7 @@ function rollDice() {
     return diceTotal;
 }
 
+// resetForm() function will update the button and reset all the counters
 function resetForm() {
     document.getElementById("playButton").style.display = "block";
     document.getElementById("resetButton").style.display = "none";
@@ -115,5 +101,5 @@ function resetForm() {
     rollCountAtHighestWon = 0;
     gameMoney = 0;
 
-    playGame(); 
+    playGame();
 }

@@ -8,6 +8,11 @@
 
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB"
         crossorigin="anonymous">
+
+    <link href="https://fonts.googleapis.com/css?family=Varela+Round" rel="stylesheet">
+
+    <link rel="stylesheet" type="text/css" href="luckSevenStyle.css">
+
 </head>
 
 <body>
@@ -16,15 +21,26 @@
         <h1>Lucky Sevens</h1>
 
         <form name="luckySevens" onsubmit="return playGame();" onreset="resetForm();">
-            <label for="startingBet">Starting Bet:</label>
-            <input type="number" name "startingBet" id="startingBet" placeholder="$0.00" min=1 required>
 
-            <button type="submit" id="playButton" style="display: block">Play</button>
-            <button type="reset" id="resetButton" style="display: none">Play Again</button>
+            <div class="input-wrapper">
+
+                <label for="startingBet">Starting Bet:</label>
+
+                <div class="input-group">
+                    <div class="input-group-prepend">
+                        <span class="input-group-text">$</span>
+                    </div>
+                    <input type="number" name="startingBet" id="startingBet" class="form-control" min="1" required>
+
+                </div>
+            </div>
+
+            <button type="submit" id="playButton" class="btn btn-warning" style="display: block">Play</button>
+            <button type="reset" id="resetButton" class="btn btn-warning" style="display: none">Play Again</button>
+
         </form>
 
         <hr/>
-
 
         <div id="results" style="display: none">
 
@@ -59,6 +75,7 @@
             </table>
         </div>
     </div>
+
     <script type=" text/JavaScript " src="luckySevens.js "></script>
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
         crossorigin="anonymous"></script>

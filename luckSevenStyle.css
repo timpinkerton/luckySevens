@@ -1,0 +1,35 @@
+body {
+    font-family: 'Varela Round', sans-serif;
+    color: aliceblue; 
+
+    background-image: url(./images/green-pattern.jpg); 
+    background-position: center;
+
+    margin-top: 20px; 
+}
+
+.container h1 {
+    text-align: center; 
+}
+
+form {
+    text-align: center; 
+    margin-top: 20px; 
+}
+
+.input-wrapper {
+    margin: 0 auto; 
+    width: 50%; 
+}
+
+.input-group {
+    margin: 0 auto; 
+    width: 50%; 
+}
+
+button {
+    margin: 20px auto; 
+    box-shadow: 2px 2px rgb(0, 0, 0);
+}
+
+
