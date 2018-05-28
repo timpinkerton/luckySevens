@@ -38,6 +38,8 @@ function playGame() {
 
         if (diceOutcome === 7) {
             gameMoney += 4;
+            document.getElementById("winOrLose").innerText = "You win !!!";
+            document.getElementById("winLoseAmount").innerText = "$4";
             console.log("You Win 4!");
 
             if (gameMoney > highestAmountWon) {
@@ -46,6 +48,8 @@ function playGame() {
             }
         } else {
             gameMoney -= 1;
+            document.getElementById("winOrLose").innerText = "You lose";
+            document.getElementById("winLoseAmount").innerText = "$1";
             console.log("You Lose 1!");
         }
         console.log("New Game Money: " + gameMoney);
@@ -55,9 +59,19 @@ function playGame() {
 
         document.forms["luckySevens"]["startingBet"].value = gameMoney;
 
+        gameStats();
+
         if (gameMoney === 0) {
             showResults();
             console.log("Sorry you're out of money.");
+        }
+
+        function gameStats() {
+            document.getElementById("gameStats").style.display = "block";
+            document.getElementById("roll").innerText = rollCounter;
+            document.getElementById("dice").innerText = diceOutcome;
+
+            document.getElementById("newBalance").innerText = gameMoney;
         }
 
         function showResults() {
@@ -68,6 +82,8 @@ function playGame() {
             document.getElementById("playButton").style.display = "none";
             document.getElementById("resetButton").style.display = "block";
             document.getElementById("results").style.display = "block";
+
+            document.getElementById("gameStats").style.display = "none";
 
             return false;
         }

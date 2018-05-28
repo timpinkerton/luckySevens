@@ -40,8 +40,45 @@
 
         </form>
 
+        <!-- Current game stats -->
+        <div id="gameStats" style="display: none">
+
+            <h1>Current Game</h1>
+
+            <table class="table table-striped">
+                <tr>
+                    <td>Roll Number</td>
+                    <td>
+                        <span id="roll"></span>
+                    </td>
+                </tr>
+                <tr>
+                    <td>You rolled</td>
+                    <td>
+                        <span id="dice"></span>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <span id="winOrLose"></span>
+                    </td>
+                    <td>
+                        <span id="winLoseAmount"></span>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Your new balance</td>
+                    <td>
+                        <span id="newBalance"></span>
+                    </td>
+                </tr>
+            </table>
+        </div>
+        <!-- End current game stats -->
+
         <hr/>
 
+        <!-- Results table when game ends -->
         <div id="results" style="display: none">
 
             <h1>GAME OVER</h1>
@@ -74,6 +111,9 @@
                 </tr>
             </table>
         </div>
+        <!-- End Results table -->
+
+
     </div>
 
     <script type=" text/JavaScript " src="luckySevens.js "></script>

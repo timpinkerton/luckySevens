@@ -8,13 +8,18 @@ body {
     margin-top: 20px; 
 }
 
-.container h1 {
+.container h1, h2 {
     text-align: center; 
 }
 
 form {
     text-align: center; 
     margin-top: 20px; 
+}
+
+.table {
+    margin: 0 auto; 
+    width: 70%; 
 }
 
 .input-wrapper {
