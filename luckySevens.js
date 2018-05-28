@@ -11,6 +11,7 @@ var rollCountAtHighestWon = 0;
 
 // initializing gameMoney equal to 0
 var gameMoney = 0;
+var initialBalance = 0; 
 
 // playGame function is called when the submit(playButton) is clicked
 function playGame() {
@@ -20,6 +21,7 @@ function playGame() {
 
     if (rollCounter === 0) {
         gameMoney = startingBet;
+        initialBalance = startingBet;
     }
 
     if (gameMoney > 0) {
@@ -40,7 +42,7 @@ function playGame() {
 
         var diceOutcome = die1 + die2;
 
-        document.getElementById("diceDisplay").style.display = "block"; 
+        document.getElementById("diceDisplay").style.display = "block";
 
         console.log("die1 is: " + die1);
         console.log("die2 is: " + die2);
@@ -82,7 +84,7 @@ function playGame() {
         }
 
         function showResults() {
-            document.getElementById("resultsStartingBet").innerText = startingBet;
+            document.getElementById("resultsStartingBet").innerText = initialBalance;
             document.getElementById("totalRollsTilBroke").innerText = rollCounter;
             document.getElementById("highestAmountWon").innerText = highestAmountWon;
             document.getElementById("rollCountAtHighestWon").innerText = rollCountAtHighestWon;
@@ -121,7 +123,7 @@ function dieImage(die) {
     } else {
         dieImage = "images/die6.png";
     }
-    return dieImage; 
+    return dieImage;
 }
 
 // resetForm() function will update the button and reset all the counters
