@@ -32,8 +32,18 @@ function playGame() {
 
         console.log("Roll number " + rollCounter);
 
-        var diceOutcome = rollDice();
+        var die1 = roll();
+        var die2 = roll();
 
+        document.getElementById("dieOne").src = dieImage(die1);
+        document.getElementById("dieTwo").src = dieImage(die2);
+
+        var diceOutcome = die1 + die2;
+
+        document.getElementById("diceDisplay").style.display = "block"; 
+
+        console.log("die1 is: " + die1);
+        console.log("die2 is: " + die2);
         console.log("You rolled a: " + diceOutcome);
 
         if (diceOutcome === 7) {
@@ -75,19 +85,30 @@ function playGame() {
     return false;
 }
 
-// The rollDice function will provide a random number for our roll
-function rollDice() {
-    // roll function will return the random number in the variable die
-    function roll() {
-        var die = Math.ceil(Math.random() * (1 + 6 - 1));
-        return die;
+// roll function will return the random number in the variable die
+function roll() {
+    var die = Math.ceil(Math.random() * (1 + 6 - 1));
+    return die;
+}
+
+function dieImage(die) {
+
+    var dieImage = "";
+
+    if (die === 1) {
+        dieImage = "images/die1.png";
+    } else if (die === 2) {
+        dieImage = "images/die2.png";
+    } else if (die === 3) {
+        dieImage = "images/die3.png";
+    } else if (die === 4) {
+        dieImage = "images/die4.png";
+    } else if (die === 5) {
+        dieImage = "images/die5.png";
+    } else {
+        dieImage = "images/die6.png";
     }
-    // Calling the roll() function and saving the result in die1 and die2
-    var die1 = roll();
-    var die2 = roll();
-    var diceTotal = die1 + die2;
-    console.log("Current roll: " + die1 + die2 + diceTotal);
-    return diceTotal;
+    return dieImage; 
 }
 
 // resetForm() function will update the button and reset all the counters
@@ -95,6 +116,8 @@ function resetForm() {
     document.getElementById("playButton").style.display = "block";
     document.getElementById("resetButton").style.display = "none";
     document.getElementById("results").style.display = "none";
+
+    document.getElementById("diceDisplay").style.display = "none";
 
     rollCounter = 0;
     highestAmountWon = 0;
