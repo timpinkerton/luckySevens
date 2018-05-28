@@ -68,10 +68,7 @@ function playGame() {
 
         function gameStats() {
             document.getElementById("gameStats").style.display = "block";
-            document.getElementById("roll").innerText = rollCounter;
-            document.getElementById("dice").innerText = diceOutcome;
 
-            document.getElementById("newBalance").innerText = gameMoney;
         }
 
         function showResults() {
