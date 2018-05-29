@@ -50,8 +50,7 @@ function playGame() {
 
         if (diceOutcome === 7) {
             gameMoney += 4;
-            document.getElementById("winOrLose").innerText = "You win !!!";
-            document.getElementById("winLoseAmount").innerText = "$4";
+            document.getElementById("winOrLose").innerText = "You win $4 !!!";
             console.log("You Win 4!");
 
             if (gameMoney > highestAmountWon) {
@@ -60,8 +59,7 @@ function playGame() {
             }
         } else {
             gameMoney -= 1;
-            document.getElementById("winOrLose").innerText = "You lose";
-            document.getElementById("winLoseAmount").innerText = "$1";
+            document.getElementById("winOrLose").innerText = "You lose $1";
             console.log("You Lose 1!");
         }
         console.log("New Game Money: " + gameMoney);
@@ -80,7 +78,6 @@ function playGame() {
 
         function gameStats() {
             document.getElementById("gameStats").style.display = "block";
-
         }
 
         function showResults() {
@@ -88,10 +85,10 @@ function playGame() {
             document.getElementById("totalRollsTilBroke").innerText = rollCounter;
             document.getElementById("highestAmountWon").innerText = highestAmountWon;
             document.getElementById("rollCountAtHighestWon").innerText = rollCountAtHighestWon;
+
             document.getElementById("playButton").style.display = "none";
             document.getElementById("resetButton").style.display = "block";
             document.getElementById("results").style.display = "block";
-
             document.getElementById("gameStats").style.display = "none";
 
             return false;
@@ -107,7 +104,6 @@ function roll() {
 }
 
 function dieImage(die) {
-
     var dieImage = "";
 
     if (die === 1) {
@@ -131,7 +127,6 @@ function resetForm() {
     document.getElementById("playButton").style.display = "block";
     document.getElementById("resetButton").style.display = "none";
     document.getElementById("results").style.display = "none";
-
     document.getElementById("diceDisplay").style.display = "none";
 
     rollCounter = 0;

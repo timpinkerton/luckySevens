@@ -22,11 +22,7 @@ form {
     width: 70%; 
 }
 
-.input-wrapper {
-    margin: 0 auto; 
-    width: 50%; 
-}
-
+.input-wrapper,
 .input-group {
     margin: 0 auto; 
     width: 50%; 
@@ -43,5 +39,5 @@ button {
 
 .die {
     display: inline-block;
-    margin: 0 10px; 
+    margin: 20px 10px; 
 }
