@@ -1,43 +1,43 @@
 body {
     font-family: 'Varela Round', sans-serif;
-    color: aliceblue; 
-
-    background-image: url(./images/green-pattern.jpg); 
+    color: aliceblue;
+    background-image: url(./images/green-pattern.jpg);
     background-position: center;
-
-    margin-top: 20px; 
+    margin-top: 20px;
 }
 
-.container h1, h2 {
-    text-align: center; 
+.container h1,
+h2 {
+    text-align: center;
 }
 
 form {
-    text-align: center; 
-    margin-top: 20px; 
+    text-align: center;
+    margin-top: 20px;
 }
 
 .table {
-    margin: 0 auto; 
-    width: 70%; 
+    margin: 0 auto;
+    width: 70%;
 }
 
 .input-wrapper,
 .input-group {
-    margin: 0 auto; 
-    width: 50%; 
+    margin: 0 auto;
+    width: 50%;
 }
 
 button {
-    margin: 20px auto; 
+    margin: 20px auto;
     box-shadow: 2px 2px rgb(0, 0, 0);
 }
 
 #diceDisplay {
-    text-align: center; 
+    text-align: center;
+    margin: 50px 0px; 
 }
 
 .die {
     display: inline-block;
-    margin: 20px 10px; 
+    margin: 20px 10px;
 }
