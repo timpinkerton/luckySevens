@@ -34,10 +34,31 @@ button {
 
 #diceDisplay {
     text-align: center;
-    margin: 80px 0px; 
+    margin: 40px 0px; 
 }
 
 .die {
     display: inline-block;
     margin: 20px 10px;
+}
+
+#rulesList {
+    max-width:70%;
+    margin: 0px auto;
+    /* align-items: center;  */
+}
+
+ol {
+    padding: 0; 
+}
+
+li {
+    text-align: center; 
+}
+
+#rules,
+#results{
+    border: 1px solid aliceblue; 
+    margin-bottom: 50px; 
+    border-radius: 8px; 
 }

@@ -94,6 +94,7 @@ function playGame() {
             document.getElementById("resetButton").style.display = "block";
             document.getElementById("results").style.display = "block";
             document.getElementById("gameStats").style.display = "none";
+            document.getElementById("rules").style.display = "none"; 
 
             return false;
         }
@@ -132,6 +133,7 @@ function resetForm() {
     document.getElementById("resetButton").style.display = "none";
     document.getElementById("results").style.display = "none";
     document.getElementById("diceDisplay").style.display = "none";
+    document.getElementById("rules").style.display = "block"; 
 
     rollCounter = 0;
     highestAmountWon = 0;
