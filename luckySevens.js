@@ -16,6 +16,8 @@ var initialBalance = 0;
 // playGame function is called when the submit(playButton) is clicked
 function playGame() {
 
+    
+
     // parseInt will convert the input into a number (instead of a string)
     var startingBet = parseInt(element.startingBet.value);
 
@@ -25,6 +27,8 @@ function playGame() {
     }
 
     if (gameMoney > 0) {
+
+        shakeDie();
 
         console.log("-----------------")
         console.log("Current Game Money: " + gameMoney);
@@ -42,7 +46,7 @@ function playGame() {
 
         var diceOutcome = die1 + die2;
 
-        document.getElementById("diceDisplay").style.display = "block";
+        document.getElementById("diceDisplay").style.display = "block"; 
 
         console.log("die1 is: " + die1);
         console.log("die2 is: " + die2);
@@ -124,25 +128,26 @@ function dieImage(die) {
 
 // resetForm() function will update the button and reset all the counters
 function resetForm() {
-    // document.getElementById("playButton").style.display = "block";
-    // document.getElementById("resetButton").style.display = "none";
-    // document.getElementById("results").style.display = "none";
-    // document.getElementById("diceDisplay").style.display = "none";
+    document.getElementById("playButton").style.display = "block";
+    document.getElementById("resetButton").style.display = "none";
+    document.getElementById("results").style.display = "none";
+    document.getElementById("diceDisplay").style.display = "none";
 
-    // rollCounter = 0;
-    // highestAmountWon = 0;
-    // rollCountAtHighestWon = 0;
-    // gameMoney = 0;
+    rollCounter = 0;
+    highestAmountWon = 0;
+    rollCountAtHighestWon = 0;
+    gameMoney = 0;
 
-    location.reload();
+    // location.reload();
 
     playGame();
 }
 
-function shakeDie(){
+function shakeDie() {
     console.log("shakeDie has been called");
-$( "#playButton" ).click(function() {
-    $( "#diceDisplay" ).effect( "shake", {times:0, distance: 40, direction: "left"}, 500);
-    $( "#diceDisplay" ).effect( "shake", {times:0, distance: 40, direction: "up"}, 500);
-  });
+
+    $( "#diceDisplay" ).effect( "shake", {times: 1, distance: 40, direction: "left"}, 50);
+    $( "#diceDisplay" ).effect( "shake", {times: 1, distance: 40, direction: "up"}, 50);
+    $( "#diceDisplay" ).effect( "shake", {times: 1, distance: 40, direction: "right"}, 50);
+    $( "#diceDisplay" ).effect( "shake", {times: 1, distance: 40, direction: "down"}, 50);
 }
