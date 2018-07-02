@@ -11,12 +11,10 @@ var rollCountAtHighestWon = 0;
 
 // initializing gameMoney equal to 0
 var gameMoney = 0;
-var initialBalance = 0; 
+var initialBalance = 0;
 
 // playGame function is called when the submit(playButton) is clicked
 function playGame() {
-
-    
 
     // parseInt will convert the input into a number (instead of a string)
     var startingBet = parseInt(element.startingBet.value);
@@ -46,7 +44,7 @@ function playGame() {
 
         var diceOutcome = die1 + die2;
 
-        document.getElementById("diceDisplay").style.display = "block"; 
+        document.getElementById("diceDisplay").style.display = "block";
 
         console.log("die1 is: " + die1);
         console.log("die2 is: " + die2);
@@ -54,7 +52,9 @@ function playGame() {
 
         if (diceOutcome === 7) {
             gameMoney += 4;
-            document.getElementById("winOrLose").innerText = "You win $4 !!!";
+            //************************************************************ */
+            winMessage();
+            // document.getElementById("winMessage").style.display = "block";
             console.log("You Win 4!");
 
             if (gameMoney > highestAmountWon) {
@@ -63,7 +63,9 @@ function playGame() {
             }
         } else {
             gameMoney -= 1;
-            document.getElementById("winOrLose").innerText = "You lose $1";
+            //************************************************************ */
+            loseMessage(); 
+            // document.getElementById("loseMessage").style.display = "block";
             console.log("You Lose 1!");
         }
         console.log("New Game Money: " + gameMoney);
@@ -73,15 +75,10 @@ function playGame() {
 
         document.forms["luckySevens"]["startingBet"].value = gameMoney;
 
-        gameStats();
-
         if (gameMoney === 0) {
+            gameOverMessage();
             showResults();
             console.log("Sorry you're out of money.");
-        }
-
-        function gameStats() {
-            document.getElementById("gameStats").style.display = "block";
         }
 
         function showResults() {
@@ -89,18 +86,19 @@ function playGame() {
             document.getElementById("totalRollsTilBroke").innerText = rollCounter;
             document.getElementById("highestAmountWon").innerText = highestAmountWon;
             document.getElementById("rollCountAtHighestWon").innerText = rollCountAtHighestWon;
-
+        
             document.getElementById("playButton").style.display = "none";
             document.getElementById("resetButton").style.display = "block";
             document.getElementById("results").style.display = "block";
-            document.getElementById("gameStats").style.display = "none";
-            document.getElementById("rules").style.display = "none"; 
-
+        
+            document.getElementById("rules").style.display = "none";
+        
             return false;
-        }
+        } 
     }
     return false;
 }
+
 
 // roll function will return the random number in the variable die
 function roll() {
@@ -133,7 +131,7 @@ function resetForm() {
     document.getElementById("resetButton").style.display = "none";
     document.getElementById("results").style.display = "none";
     document.getElementById("diceDisplay").style.display = "none";
-    document.getElementById("rules").style.display = "block"; 
+    document.getElementById("rules").style.display = "block";
 
     rollCounter = 0;
     highestAmountWon = 0;
@@ -148,8 +146,37 @@ function resetForm() {
 function shakeDie() {
     console.log("shakeDie has been called");
 
-    $( "#diceDisplay" ).effect( "shake", {times: 1, distance: 40, direction: "left"}, 50);
-    $( "#diceDisplay" ).effect( "shake", {times: 1, distance: 40, direction: "up"}, 50);
-    $( "#diceDisplay" ).effect( "shake", {times: 1, distance: 40, direction: "right"}, 50);
-    $( "#diceDisplay" ).effect( "shake", {times: 1, distance: 40, direction: "down"}, 50);
+    $("#diceDisplay").effect("shake", {
+        times: 1,
+        distance: 40,
+        direction: "left"
+    }, 50);
+    $("#diceDisplay").effect("shake", {
+        times: 1,
+        distance: 40,
+        direction: "up"
+    }, 50);
+    $("#diceDisplay").effect("shake", {
+        times: 1,
+        distance: 40,
+        direction: "right"
+    }, 50);
+    $("#diceDisplay").effect("shake", {
+        times: 1,
+        distance: 40,
+        direction: "down"
+    }, 50);    
+}
+
+
+function winMessage() {
+    $("#winMessage").delay(200).fadeIn().delay(800).fadeOut();
+}
+
+function loseMessage() {
+    $("#loseMessage").delay(200).fadeIn().delay(800).fadeOut();    
+}
+
+function gameOverMessage() {
+    $("#gameOver").delay(1800).fadeIn().delay(1000).fadeOut();    
 }

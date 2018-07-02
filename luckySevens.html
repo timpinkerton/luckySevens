@@ -41,9 +41,11 @@
         </form>
 
         <!-- Current roll outcome -->
-        <div id="gameStats" style="display: none">
+        <div id="winOrLose">
             <h2>
-                <span id="winOrLose"></span>
+                <span id="winMessage" style="display: none">You win $4 !!!</span>
+                <span id="loseMessage" style="display: none">You lose $1</span>
+                <span id="gameOver" style="display: none">GAME OVER</span>
             </h2>
         </div>
         <!-- End current roll outcome -->
@@ -83,8 +85,7 @@
         <!-- Results table when game ends -->
         <div id="results" style="display: none">
 
-            <h1>GAME OVER</h1>
-            <h2>Results</h2>
+            <h1>Results</h1>
 
             <table class="table table-striped">
                 <tr>
